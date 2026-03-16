@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adding this just to test if the file is loading at all */
+body {
+  background-color: #fafafa; 
+}
