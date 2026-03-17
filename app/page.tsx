@@ -29,10 +29,20 @@ export default function Home() {
             Download CV
           </a>
           <a 
-            href="#contact" 
+            href="https://github.com/rainyalgorithms" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
           >
-            View GitHub
+            GitHub
+          </a>
+          <a 
+            href="https://linkedin.com/in/esha-pakalapati/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+          >
+            LinkedIn
           </a>
         </div>
       </section>
