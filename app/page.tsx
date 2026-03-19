@@ -65,10 +65,17 @@ export default function Home() {
         </div>
       </ThemeSection>
 
-      {/* 2. EXPERIENCE (Space) */}
+      {/* 2. EXPERIENCE (Forest Temple) */}
       <ThemeSection id="experience" themeName="space" setActiveTheme={setActiveTheme}>
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">Work Experience</h2>
-        <Timeline />
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-black text-[#8b9e73] tracking-widest uppercase drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
+            Forest Temple
+          </h2>
+          <p className="text-xl text-gray-500 font-mono mt-2">Level 1: Experience</p>
+        </div>
+
+        {/* We use the new Forest component here */}
+        <ForestTimeline /> 
       </ThemeSection>
 
       {/* 3. SKILLS (Ice Temple) */}
