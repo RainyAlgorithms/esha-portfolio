@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import Timeline from "./components/Timeline";
+import ForestTimeline from "./components/ForestTimeline";
 import ProjectGrid from "./components/ProjectGrid";
 import ThemeSection from "./components/ThemeSection";
 import GlowingFairy from "./components/GlowingFairy";
@@ -14,8 +14,8 @@ export default function Home() {
     switch (activeTheme) {
       case "firewater":
         return "bg-orange-50 dark:bg-orange-950/30"; 
-      case "space":
-        return "bg-slate-900 dark:bg-black"; 
+      case "forest":
+        return "bg-[#1a1c19] dark:bg-[#121411] bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')]";
       case "ice":
         return "bg-blue-50 dark:bg-slate-900"; 
       case "sports":
@@ -66,7 +66,7 @@ export default function Home() {
       </ThemeSection>
 
       {/* 2. EXPERIENCE (Forest Temple) */}
-      <ThemeSection id="experience" themeName="space" setActiveTheme={setActiveTheme}>
+      <ThemeSection id="experience" themeName="forest" setActiveTheme={setActiveTheme}>
         <div className="text-center mb-12">
           <h2 className="text-5xl font-black text-[#8b9e73] tracking-widest uppercase drop-shadow-[0_5px_5px_rgba(0,0,0,1)]">
             Forest Temple
@@ -123,7 +123,7 @@ export default function Home() {
               </p>
             </div>
             
-            <form action="YOUR_FORMSPREE_URL_HERE" method="POST" className="space-y-6 bg-white/30 dark:bg-black/30 p-8 rounded-2xl border border-white/50 dark:border-blue-800/50 backdrop-blur-lg shadow-xl">
+            <form action="YOUR_FORMSPREE_URL_HERE" method="POST" className="forest-y-6 bg-white/30 dark:bg-black/30 p-8 rounded-2xl border border-white/50 dark:border-blue-800/50 backdrop-blur-lg shadow-xl">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">Name</label>
                 <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-blue-200 dark:border-blue-800 bg-white/50 dark:bg-blue-950/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow backdrop-blur-sm" placeholder="John Doe" />
