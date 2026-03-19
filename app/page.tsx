@@ -5,6 +5,7 @@ import Timeline from "./components/Timeline";
 import ProjectGrid from "./components/ProjectGrid";
 import ThemeSection from "./components/ThemeSection";
 import GlowingFairy from "./components/GlowingFairy";
+import WaterWaves from "./components/WaterWaves";
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState("firewater");
@@ -16,14 +17,14 @@ export default function Home() {
         return "bg-orange-50 dark:bg-orange-950/30"; 
       case "space":
         return "bg-slate-900 dark:bg-black"; 
-      case "roses":
-        return "bg-rose-50 dark:bg-stone-900"; 
+      case "ice":
+        return "bg-blue-50 dark:bg-slate-900"; 
       case "sports":
         return "bg-green-50 dark:bg-teal-950/30"; 
       case "bharatanatyam":
         return "bg-amber-50 dark:bg-[#3d1616]"; 
-      case "contact":
-        return "bg-indigo-50 dark:bg-indigo-950/30"; // A calm theme to end on
+      case "water":
+        return "bg-cyan-50 dark:bg-blue-950";
       default:
         return "bg-white dark:bg-gray-950";
     }
@@ -88,14 +89,17 @@ export default function Home() {
         <Timeline />
       </ThemeSection>
 
-      {/* 3. SKILLS (White Roses) */}
-      <ThemeSection id="skills" themeName="roses" setActiveTheme={setActiveTheme}>
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">Technical Skills</h2>
-        <div className="flex flex-wrap gap-3">
+      {/* 3. SKILLS (Ice Temple) */}
+      <ThemeSection id="skills" themeName="ice" setActiveTheme={setActiveTheme}>
+        <h2 className="text-4xl font-bold text-blue-900 dark:text-blue-100 mb-8 drop-shadow-md">Technical Skills</h2>
+        <div className="flex flex-wrap gap-4">
             {['Python', 'React', 'FastAPI', 'PyTorch', 'AWS SageMaker', 'PostgreSQL', 'C/C++', 'Java'].map(skill => (
-                <span key={skill} className="px-4 py-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 shadow-sm">
-                    {skill}
-                </span>
+                <div key={skill} className="relative group">
+                  {/* Frosted Glass Shard Effect */}
+                  <span className="block px-6 py-3 bg-white/40 dark:bg-blue-400/10 backdrop-blur-md border border-white/60 dark:border-blue-300/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-xl text-blue-900 dark:text-blue-100 font-semibold tracking-wide transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white/60 dark:group-hover:bg-blue-400/20 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] dark:group-hover:shadow-[0_0_20px_rgba(96,165,250,0.5)]">
+                      {skill}
+                  </span>
+                </div>
             ))}
         </div>
       </ThemeSection>
@@ -117,39 +121,44 @@ export default function Home() {
         </div>
       </ThemeSection>
 
-      {/* 6. CONTACT (Indigo/Calm) */}
-      <ThemeSection id="contact" themeName="contact" setActiveTheme={setActiveTheme}>
-        <div className="max-w-xl mx-auto w-full">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              Have a question or want to work together? Drop me a message below.
-            </p>
-          </div>
+      {/* 6. CONTACT (Water Temple) */}
+      {/* We wrap this in relative/overflow-hidden so the waves don't spill into other sections */}
+      <div className="relative overflow-hidden">
+        <ThemeSection id="contact" themeName="water" setActiveTheme={setActiveTheme}>
           
-          {/* Formspree handles the actual email sending */}
-          <form action="https://formspree.io/f/mnjgokwg" method="POST" className="space-y-6 bg-white/50 dark:bg-black/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 backdrop-blur-sm">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-              <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="John Doe" />
+          <WaterWaves /> {/* The animated waves rendering in the background */}
+          
+          <div className="max-w-xl mx-auto w-full relative z-10"> {/* z-10 keeps form above the water */}
+            <div className="text-center mb-10">
+              <h2 className="text-4xl font-bold text-blue-900 dark:text-white mb-4">Let's Connect</h2>
+              <p className="text-lg text-blue-800 dark:text-blue-200">
+                Have a question or want to work together? Drop me a message below.
+              </p>
             </div>
             
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-              <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="john@example.com" />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-              <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow" placeholder="How can I help you?"></textarea>
-            </div>
-            
-            <button type="submit" className="w-full py-4 px-6 text-white font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </ThemeSection>
+            {/* The form now has a glassmorphism effect to match the water theme */}
+            <form action="YOUR_FORMSPREE_URL_HERE" method="POST" className="space-y-6 bg-white/30 dark:bg-black/30 p-8 rounded-2xl border border-white/50 dark:border-blue-800/50 backdrop-blur-lg shadow-xl">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">Name</label>
+                <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-blue-200 dark:border-blue-800 bg-white/50 dark:bg-blue-950/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow backdrop-blur-sm" placeholder="John Doe" />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">Email</label>
+                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-blue-200 dark:border-blue-800 bg-white/50 dark:bg-blue-950/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow backdrop-blur-sm" placeholder="john@example.com" />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">Message</label>
+                <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 rounded-lg border border-blue-200 dark:border-blue-800 bg-white/50 dark:bg-blue-950/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-shadow backdrop-blur-sm" placeholder="How can I help you?"></textarea>
+              </div>
+              
+              <button type="submit" className="w-full py-4 px-6 text-white font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.8)]">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </ThemeSection>
 
       <footer className="py-8 text-center text-gray-500 text-sm">
         © 2026 Esha Pakalapati. Built with Next.js & FastAPI.
