@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Timeline from "./components/Timeline";
 import ProjectGrid from "./components/ProjectGrid";
 import ThemeSection from "./components/ThemeSection";
+import GlowingFairy from "./components/GlowingFairy";
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState("firewater");
@@ -31,6 +32,8 @@ export default function Home() {
   return (
     <main className={`transition-colors duration-1000 ease-in-out ${getThemeClasses()}`}>
       <Navbar />
+
+      <GlowingFairy />
 
       {/* 1. ABOUT / COVER (Fire & Water) */}
       <ThemeSection id="about" themeName="firewater" setActiveTheme={setActiveTheme}>
