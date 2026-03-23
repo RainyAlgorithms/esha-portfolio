@@ -47,7 +47,6 @@ export default function Home() {
              <div className="absolute inset-0 bg-gradient-to-tr from-red-500 to-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
              
              {/* Actual Image Container */}
-             {/* IMPORTANT: Make sure to add a photo of yourself named "me.jpg" to your public folder! */}
              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-[#2a2a2a] overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)] z-10 bg-gray-800">
                <img 
                  src="/me.jpg" 
@@ -67,7 +66,7 @@ export default function Home() {
               Hey! I'm <br className="hidden md:block" />
               <Typewriter />
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+            <p className="text-xl text-black-600 dark:text-black-400 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
               Currently automating ML pipelines at <span className="text-red-500 font-semibold drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]">Airbus</span>.
               Passionate about building intelligence into the web.
             </p>
