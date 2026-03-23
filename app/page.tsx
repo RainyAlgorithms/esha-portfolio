@@ -67,6 +67,10 @@ export default function Home() {
               Hey! I'm <br className="hidden md:block" />
               <Typewriter />
             </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+              Currently automating ML pipelines at <span className="text-red-500 font-semibold drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]">Airbus</span>.
+              Passionate about building intelligence into the web.
+            </p>
             
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
               
